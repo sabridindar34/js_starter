@@ -66,19 +66,11 @@ export default class UserService {
         this.loggerService.log(user)
     }
 
-    listCustomers() {
-        return this.customers
+    list() {
+        return this.users
     }
 
-    listEmployees() {
-        return this.employees
-    }
-
-    getCustomerById(id) {
-        return this.customers.find(u => u.id === id)
-    }
-
-    getEmployeeById(id) {
-        return this.employees.find(u => u.id === id)
+    getById(id) {
+        return this.users.find(u => u.id === id)
     }
 }

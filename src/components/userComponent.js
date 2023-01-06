@@ -1,4 +1,4 @@
-import { MongoLogger } from "../crossCuttingConcerns/logging/logger.js"
+import { MongoLogger } from "../crossCuttingConcerns/logging/MongoLogger.js"
 import User from "../models/user.js"
 import Customer from "../models/customer.js"
 import Employee from "../models/employee.js"
@@ -18,10 +18,8 @@ let service = new UserService(logger)
 
 
 
-let customerToAdd = new Customer(8, "Furkan", "Ak", "Antalya", 24)
-
+let customerToAdd = new Customer(8, "Furkan", "Ak", "Antalya", 24, "customer")
 service.load()
-customerToAdd.type = "customer"
 service.add(customerToAdd)
 // service.add(new UserAddModel(9, "Emre", "Sönmez", "Antalya", 25, "customer"))
 console.log(service.customers);
